@@ -1,0 +1,21 @@
+.{
+    .name = .cat_zig,
+
+    .version = "0.0.0",
+
+    .fingerprint = 0x4529c5912e951d13,
+
+    .minimum_zig_version = "0.16.0-dev.205+4c0127566",
+
+    .dependencies = .{
+        .cli = .{
+            .url = "git+https://github.com/sam701/zig-cli?ref=zig-0.15#cb44aade25a3c1eddd8b6f990b50c2189442c1e2",
+            .hash = "cli-0.10.0-2eKe_5kEAQBeHqKxUHNTGnETzu81rqKWwT1WPt1jXBt0",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
