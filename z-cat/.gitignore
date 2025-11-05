@@ -1,0 +1,16 @@
+zig-cache/
+zig-out/
+build/
+out/
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.tmp
+*.swp
+*.swo
+*~
+
