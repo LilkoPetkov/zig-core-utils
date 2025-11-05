@@ -42,12 +42,12 @@ pub fn main() !void {
 
     const app = cli.App{
         .command = cli.Command{
-            .name = "env",
+            .name = "zenv",
             .options = try r.allocOptions(&.{
                 .{
                     .short_alias = 'f',
                     .long_name = "fetch",
-                    .help = "fetch single environment variables\n./z-env -f PATH",
+                    .help = "fetch single environment variables",
                     .required = false,
                     .value_ref = r.mkRef(&config.variable),
                 },
@@ -148,12 +148,12 @@ fn fetchAllEnvVars(allocator: Allocator, stdout: *std.Io.Writer) !void {
         try unsetVar(allocator);
     }
 
-    var env_vars = try std.process.getEnvMap(allocator);
-    defer env_vars.deinit();
-
-    if (env_vars.count() == 0) {
+    if (config.ignore_env and std.mem.eql(u8, config.set_var, "")) {
         return;
     }
+
+    var env_vars = try std.process.getEnvMap(allocator);
+    defer env_vars.deinit();
 
     var it = env_vars.iterator();
 
