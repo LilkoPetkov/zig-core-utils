@@ -10,7 +10,7 @@ pub fn build(b: *std.Build) void {
 
     const zig_cli_dep = b.dependency("cli", .{ .target = target, .optimize = optimize });
     const exe = b.addExecutable(.{
-        .name = "z_env",
+        .name = "zenv",
         .root_module = b.createModule(.{
             .root_source_file = b.path("src/main.zig"),
 
